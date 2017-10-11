@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 保持一致就是复制粘贴 -->
+<!-- namespace 要和接口名字保持一致 -->
+<mapper namespace="com.zhiyou100.dao.UserDao">
+
+<insert id="addUser" parameterType="user">
+
+insert into user(number) values(${number})
+
+</insert>
+
+<select id="getUser" parameterType="user" resultType="user">
+
+select id from user where number=${number}
+
+</select>
+
+
+</mapper>

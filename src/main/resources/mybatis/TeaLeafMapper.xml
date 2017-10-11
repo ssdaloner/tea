@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 保持一致就是复制粘贴 -->
+<!-- namespace 要和接口名字保持一致 -->
+<mapper namespace="com.zhiyou100.dao.TeaLeafDao">
+
+<select id="listTeaLeaf" parameterType="selector" resultType="TeaLeaf">
+
+
+select t.id,t.shape,t.color,t.purity,t.soup_color as soupColor,t.smell,t.leaf_buttom as leafButtom,t.teagrade_id as teagradeId,t.sweet_smell as sweetSmell,t.create_time as createTime,g.name as gradeName from tea as t,teagrade as g where g.id=t.teagrade_id 
+
+<if test="sort!=null">
+
+order by ${sort}
+
+</if>
+
+limit ${pageIndex},7
+
+
+</select>
+
+<select id="getCount" resultType="integer">
+
+select count(id) from tea
+
+</select>
+
+
+<insert id="addTeaLeaf" parameterType="TeaLeaf">
+
+insert into tea (shape,color,purity,soup_color,smell,leaf_buttom,teagrade_id,sweet_smell) values(${shape},${color},${purity},${soupColor},${smell},${leafButtom},${teagradeId},${sweetSmell})
+
+</insert>
+
+<select id="getCountBy" resultType="integer">
+
+select count(teagrade_id) from tea where teagrade_id=#{gradeId}
+
+</select>
+
+<select id="getTea" resultType="TeaLeaf">
+
+select t.shape,t.color,t.purity,t.soup_color as soupColor,t.smell,t.leaf_buttom as leafButtom,t.sweet_smell as sweetSmell from tea as t where id=#{id}
+
+</select>
+
+
+</mapper>

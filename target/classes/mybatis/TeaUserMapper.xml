@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 保持一致就是复制粘贴 -->
+<!-- namespace 要和接口名字保持一致 -->
+<mapper namespace="com.zhiyou100.dao.TeaUserDao">
+
+<select id="getUser" resultType="integer">
+
+select count(id) from teauser where user_id=#{userId}
+
+</select>
+
+<insert id="addUser" parameterType="TeaUser">
+
+insert into teauser(user_id,teabrand_id) values(${userId},${teabrandId})
+
+</insert>
+
+
+</mapper>

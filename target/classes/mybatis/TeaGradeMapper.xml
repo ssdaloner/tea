@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 保持一致就是复制粘贴 -->
+<!-- namespace 要和接口名字保持一致 -->
+<mapper namespace="com.zhiyou100.dao.TeaGradeDao">
+
+<select id="listTeagrade" resultType="Teagrade">
+
+select g.id,g.name,g.shape,g.color,g.purity,g.soup_color as soupColor,g.sweet_smell as sweetSmell,g.smell,g.leaf_buttom as leafButtom from teagrade as g
+
+</select>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</mapper>

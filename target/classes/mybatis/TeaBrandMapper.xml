@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 保持一致就是复制粘贴 -->
+<!-- namespace 要和接口名字保持一致 -->
+<mapper namespace="com.zhiyou100.dao.TeaBrandDao">
+
+<update id="updateVotes">
+
+update teabrand set votes=votes+1 where id=#{id}
+
+</update>
+
+<select id="getVotes" resultType="integer">
+
+select votes from teabrand
+
+</select>
+
+<select id="listTeabrands" resultType="TeaBrand">
+
+select id,votes from teabrand order by votes desc limit 0,8
+
+</select>
+
+</mapper>
