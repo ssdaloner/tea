@@ -29,7 +29,7 @@
             <ul class="nav navbar-nav">
                 <li><a href="index.jsp">添加</a></li>
                 <li class="active"><a href="statistics.jsp">统计</a></li>
-                <li><a href="vote.html">投票</a></li>
+                <li><a href="vote.jsp">投票</a></li>
                 <li><a href="score.html">作业要求</a></li>                                                                                
             </ul>
         </div>
